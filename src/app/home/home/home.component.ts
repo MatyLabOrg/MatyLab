@@ -13,8 +13,8 @@ import * as uiActions from '../../core/store/actions';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private store: Store<AppState>, private authService: AuthService) { }
-  
+  constructor(private store: Store<AppState>) { }
+
   uiSubscription$!: Subscription;
 
   ngOnInit(): void {
@@ -27,8 +27,4 @@ export class HomeComponent implements OnInit {
     this.uiSubscription$?.unsubscribe();
   }
 
-  logout(): void {
-    this.authService.logOut();
-  }
-  
 }
