@@ -1,6 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { RadarAccessGuard } from './radar-access.guard';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment.prod';
 
 // import { RadarAccessGuard } from './radar-access.guard';
 
@@ -33,6 +35,9 @@ describe('RadarAccessGuard', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+      ],
       providers: [
         RadarAccessGuard,
         provideMockStore({ initialState }),
@@ -46,4 +51,5 @@ describe('RadarAccessGuard', () => {
   it('should be created', () => {
     expect(guard).toBeTruthy();
   });
+  
 });
