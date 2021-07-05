@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           icon: 'success',
           text: 'Bienvenido'
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/radares']);
 
         //TODO: Cambiar por el usuario almacenado en BD Firestore
         const usuarioApp = new Usuario(usuario.user.uid, usuario.user.displayName, email);
